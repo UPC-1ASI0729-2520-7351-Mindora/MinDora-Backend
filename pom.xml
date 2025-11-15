@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -14,12 +16,11 @@
     <artifactId>mindora-backend</artifactId>
     <version>1.0.0</version>
     <name>MinDora Backend</name>
-    <description>MinDora Platform REST API</description>
 
     <properties>
-        <java.version>25</java.version>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
+        <java.version>24</java.version>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -48,7 +49,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- DATABASE -->
+        <!-- MYSQL -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -67,13 +68,6 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.8.13</version>
-        </dependency>
-
-        <!-- PLURALIZE -->
-        <dependency>
-            <groupId>io.github.encryptorcode</groupId>
-            <artifactId>pluralize</artifactId>
-            <version>1.0.0</version>
         </dependency>
 
         <!-- SECURITY -->
@@ -113,22 +107,15 @@
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-        </resources>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>25</source>
-                    <target>25</target>
+                    <source>24</source>
+                    <target>24</target>
                 </configuration>
             </plugin>
 
@@ -139,6 +126,5 @@
 
         </plugins>
     </build>
-
 
 </project>
