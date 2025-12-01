@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mindora-backend
+    env: java
+    region: oregon
+    plan: free
+    buildCommand: ./mvnw clean install -DskipTests
+    startCommand: java -jar target/mindora-backend-1.0.0.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: SERVER_PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRATION
+        value: 86400000
+
