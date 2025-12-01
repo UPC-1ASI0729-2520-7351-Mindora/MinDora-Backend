@@ -1,0 +1,8 @@
+.git
+.idea
+*.iml
+node_modules
+.DS_Store
+target/test-classes
+src/test
+
